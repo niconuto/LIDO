@@ -1,0 +1,8 @@
+SELECT
+  evt_block_time AS "Depozit Time",
+  shares / 1e18 AS Amount,
+  depositor AS Wallet
+FROM eigenlayer_ethereum.StrategyManager_evt_Deposit
+WHERE
+  strategy = 0x93c4b944d05dfe6df7645a86cd2206016c51564d
+  order by evt_block_time desc
